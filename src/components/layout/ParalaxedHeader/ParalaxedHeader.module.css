@@ -1,0 +1,27 @@
+.layers{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.layer_base{
+    background-image: url("../../../data/img/background.png");
+    width: 100%;
+    height: 100%; /* или auto, если хотите подстроить высоту под содержимое */
+    background-size: cover; /* масштабирует изображение, чтобы заполнить контейнер */
+    background-repeat: no-repeat; /* предотвращает повторение изображения */
+    background-position: center;
+    position: absolute;
+}
+.layer_front{
+    background-image: url("../../../data/img/top_layer.png");
+    width: 100%;
+    height: 100%; /* или auto, если хотите подстроить высоту под содержимое */
+    background-size: cover; /* масштабирует изображение, чтобы заполнить контейнер */
+    background-repeat: no-repeat; /* предотвращает повторение изображения */
+    background-position: center;
+    position: absolute;
+}
+
