@@ -1,10 +1,19 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import styles from './ParalaxedHeader.module.css'
 
 const ParalaxedHeader = () => {
-    window.addEventListener('scroll', e=>{
-        document.body.style.cssText = '--scrollTop: ${this.scrollY} px'
-    })
+        useEffect(() => {
+            const handleScroll = () => {
+                document.body.style.setProperty('--scrollTop', `${window.scrollY}px`);
+            };
+            window.addEventListener('scroll', handleScroll);
+
+            // Cleanup function to remove event listener when component unmounts
+            return () => {
+                window.removeEventListener('scroll', handleScroll);
+            };
+        }, []);
+
 
     return (
         <>
@@ -16,7 +25,9 @@ const ParalaxedHeader = () => {
                 <div className={styles.layer_base}/>
                 <div className={styles.layer_front}/>
             </div>
+            <div className={styles.just}>
 
+            </div>
         </>
     );
 };
