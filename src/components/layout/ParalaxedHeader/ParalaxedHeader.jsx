@@ -1,5 +1,6 @@
 import React, {useEffect} from 'react';
 import styles from './ParalaxedHeader.module.css'
+import classNames from "classnames";
 
 const ParalaxedHeader = () => {
         useEffect(() => {
@@ -22,8 +23,8 @@ const ParalaxedHeader = () => {
                     <div className={styles.caption}>Открой</div>
                     <div className={styles.title}>Санкт-Петербург</div>
                 </div>
-                <div className={styles.layer_base}/>
-                <div className={styles.layer_front}/>
+                <div className={classNames(styles.layer, styles.layer_base)}/>
+                <div className={classNames(styles.layer, styles.layer_front)}/>
             </div>
             <div className={styles.just}>
 
