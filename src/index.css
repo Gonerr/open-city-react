@@ -1,3 +1,47 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+@font-face {
+  font-family: miamaNueva;
+  src: url("./data/fonts/ofont.ru_Miama Nueva.ttf");
+}
+@font-face {
+  font-family: raleway;
+  src: url("./data/fonts/raleway-regular.woff2");
+}
+@font-face {
+  font-family: raleway_f;
+  src: url("./data/fonts/raleway-black.woff2");
+  font-weight: 900;
+}
+@font-face {
+  font-family: Antonella;
+  src: url("./data/fonts/ofont.ru_Antonella script.ttf");
+}
+@font-face {
+  font-family: aurora;
+  src: url("./data/fonts/ofont.ru_Aurora Script.ttf");
+}
+@font-face {
+  font-family: nicoletta;
+  src: url("./data/fonts/ofont.ru_Nicoletta script.ttf");
+}
+@font-face {
+  font-family: raleway;
+  src: url("./data/fonts/raleway-regular.woff2");
+}
+@font-face {
+  font-family: margarita;
+  src: url("./data/fonts/ofont.ru_Margarita script.ttf");
+}
+@font-face {
+  font-family: raleway_f;
+  src: url("./data/fonts/raleway-black.woff2");
+  font-weight: 900;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -5,6 +49,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-family: raleway, miamaNueva;
 }
 
 code {
@@ -16,47 +61,15 @@ code {
   --dl-size-tripleunit: 3rem;
   --dl-size-fiveunit: 5rem;
   --dl-size-doubleunit: 2rem;
+  --dl-size-fourunit: 4rem;
   --dl-size-unit: 1rem;
   --dl-border-radius-medium: 24px;
   --dl-color-background: #8A8278;
   --dl-color-font: #1D1A07S;
+
   --index:calc(1vw + 1vh);
-  /*--dl-color-gray-500: #595959;*/
-  /*--dl-color-gray-700: #999999;*/
-  /*--dl-color-gray-900: #D9D9D9;*/
-  /*--dl-size-size-unit: 1rem;*/
-  /*--dl-color-gray-black: #000000;*/
-  /*--dl-color-gray-white: #FFFFFF;*/
-  /*--dl-space-space-unit: 1em;*/
-  /*--dl-color-primary-100: #370511ff;*/
-  /*--dl-color-primary-500: #643843ff;*/
-  /*--dl-color-primary-700: #775860ff;*/
-  /*--dl-color-primary-blue: #707cc4ff;*/
-  /*--dl-color-primary-gray: #e4e4e4ff;*/
-  /*--dl-size-size-halfunit: 0.5rem;*/
-  /*--dl-color-theme-accent1: #F3E8E2;*/
-  /*--dl-color-theme-accent2: #D8BFAF;*/
-  /*--dl-radius-radius-round: 50%;*/
-  /*--dl-color-theme-primary1: #5f5db9;*/
-  /*--dl-color-theme-primary2: #4f776b;*/
-  /*--dl-size-size-doubleunit: 2rem;*/
-  /*--dl-size-size-tripleunit: 3rem;*/
-  /*--dl-space-space-halfunit: 0.5em;*/
-  /*--dl-radius-radius-radius2: 2px;*/
-  /*--dl-radius-radius-radius4: 4px;*/
-  /*--dl-radius-radius-radius8: 8px;*/
-  /*--dl-space-space-quadruple: 4em;*/
-  /*--dl-color-theme-secondary1: #F3E8E2;*/
-  /*--dl-color-theme-secondary2: #E0D1CB;*/
-  /*--dl-space-space-doubleunit: 2em;*/
-  /*--dl-space-space-tripleunit: 3em;*/
-  /*--dl-color-primary-darkgreen: #3d5547ff;*/
-  /*--dl-color-theme-neutral-dark: #191818;*/
-  /*--dl-radius-radius-cardradius: 8px;*/
-  /*--dl-color-theme-neutral-light: #FBFAF9;*/
-  /*--dl-radius-radius-imageradius: 8px;*/
-  /*--dl-radius-radius-inputradius: 24px;*/
-  /*--dl-radius-radius-buttonradius: 24px;*/
+  --text: #e7e7e0;
+  --transition: transform .75s cubic-bezier(.075, .5, 0, 1);
 }
 
 .delimeter{
@@ -71,3 +84,4 @@ code {
   background-size: 100% 1px, 100% 1px;
   background-origin: padding-box, border-box;
 }
+
