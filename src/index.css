@@ -7,27 +7,7 @@
   font-family: miamaNueva;
   src: url("./data/fonts/ofont.ru_Miama Nueva.ttf");
 }
-@font-face {
-  font-family: raleway;
-  src: url("./data/fonts/raleway-regular.woff2");
-}
-@font-face {
-  font-family: raleway_f;
-  src: url("./data/fonts/raleway-black.woff2");
-  font-weight: 900;
-}
-@font-face {
-  font-family: Antonella;
-  src: url("./data/fonts/ofont.ru_Antonella script.ttf");
-}
-@font-face {
-  font-family: aurora;
-  src: url("./data/fonts/ofont.ru_Aurora Script.ttf");
-}
-@font-face {
-  font-family: nicoletta;
-  src: url("./data/fonts/ofont.ru_Nicoletta script.ttf");
-}
+
 @font-face {
   font-family: raleway;
   src: url("./data/fonts/raleway-regular.woff2");
@@ -40,6 +20,14 @@
   font-family: raleway_f;
   src: url("./data/fonts/raleway-black.woff2");
   font-weight: 900;
+}
+@font-face {
+  font-family: caravan;
+  src: url("./data/fonts/Caravan.otf");
+}
+@font-face {
+  font-family: sc_jurere;
+  src: url("./data/fonts/SC Jurerê.ttf");
 }
 
 body {
@@ -69,6 +57,7 @@ code {
 
   --index:calc(1vw + 1vh);
   --text: #e7e7e0;
+  --accent: #403328;
   --transition: transform .75s cubic-bezier(.075, .5, 0, 1);
 }
 

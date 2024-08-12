@@ -12,7 +12,7 @@ const App = () => {
   return (
       <Router>
           <ParalaxedHeader/>
-        {/*<Header/>*/}
+        {/*<Footer/>*/}
         <Routes>
           {/*<Route path="/" element={<Home />} />*/}
           {/*<Route path="/routes" element={<RoutesPage />} />*/}
