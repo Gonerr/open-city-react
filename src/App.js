@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Header from "./components/layout/header/Header";
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import ParalaxedHeader from "./components/layout/ParalaxedHeader/ParalaxedHeader";
+import HomePage from "./components/layout/homePage/HomePage";
 // import Home from './Home';
 // import RoutesPage from './RoutesPage';
 // import Gallery from './Gallery';
@@ -11,7 +11,7 @@ import ParalaxedHeader from "./components/layout/ParalaxedHeader/ParalaxedHeader
 const App = () => {
   return (
       <Router>
-          <ParalaxedHeader/>
+          <HomePage/>
         {/*<Footer/>*/}
         <Routes>
           {/*<Route path="/" element={<Home />} />*/}

@@ -1,17 +1,17 @@
 import React, { useEffect } from 'react';
-import styles from './ParalaxedHeader.module.css';
-import classNames from 'classnames';
+import styles from './HomePage.module.css';
+
 import { gsap } from '../../../utils/gsap/gsap.min';
 import { ScrollTrigger } from '../../../utils/gsap/ScrollTrigger.min';
 import { ScrollSmoother } from '../../../utils/gsap/ScrollSmoother.min';
-import NavbarCompact from '../navbarCompact/NavbarCompact';
 
 import Slider from "../Slider/Slider";
+import ParalaxedHero from "../ParalaxedHero/ParalaxedHero";
 // Регистрация плагинов
 gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
 
 
-const ParalaxedHeader = () => {
+const HomePage = () => {
     useEffect(() => {
         const handleScroll = () => {
             document.body.style.setProperty('--scrollTop', `${window.scrollY}px`);
@@ -53,17 +53,7 @@ const ParalaxedHeader = () => {
     return (
         <div id="wrapper">
             <div id="content">
-                <div className={`${styles.mainHeader} section`}> {/* Добавляем класс 'section' */}
-                    <div className={styles.layers}>
-                        <NavbarCompact />
-                        <div className={styles.header}>
-                            <div className={styles.title}>Санкт-Петербург</div>
-                        </div>
-                        <div className={classNames(styles.layer, styles.layer_base)} />
-                        <div className={classNames(styles.layer, styles.layer_front)} />
-                    </div>
-                </div>
-
+                <ParalaxedHero/>
                 <Slider/>
 
                 <div className={`${styles.third_container} section`}> {/* Добавляем класс 'section' */}
@@ -80,4 +70,4 @@ const ParalaxedHeader = () => {
     );
 };
 
-export default ParalaxedHeader;
+export default HomePage;
