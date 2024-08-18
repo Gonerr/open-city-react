@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './ParalaxedHero.module.css';
 import classNames from 'classnames';
-import NavbarCompact from '../navbarCompact/NavbarCompact';
+import NavbarCompact from '../../navbarCompact/NavbarCompact';
 
 
 const ParalaxedHero = () => {

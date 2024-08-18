@@ -84,7 +84,7 @@
 }
 
 .layer_base {
-    background-image: url("../../../data/img/background.png");
+    background-image: url("../../../../data/img/background.png");
     background-size: cover; /* масштабирует изображение, чтобы заполнить контейнер */
     background-repeat: no-repeat; /* предотвращает повторение изображения */
     background-position: center;
@@ -93,7 +93,7 @@
 }
 
 .layer_front {
-    background-image: url("../../../data/img/top_layer.png");
+    background-image: url("../../../../data/img/top_layer.png");
     background-size: cover; /* масштабирует изображение, чтобы заполнить контейнер */
     background-repeat: no-repeat; /* предотвращает повторение изображения */
     background-position: center;

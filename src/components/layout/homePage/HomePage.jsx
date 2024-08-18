@@ -1,12 +1,13 @@
 import React, { useEffect } from 'react';
-import styles from './HomePage.module.css';
 
 import { gsap } from '../../../utils/gsap/gsap.min';
 import { ScrollTrigger } from '../../../utils/gsap/ScrollTrigger.min';
 import { ScrollSmoother } from '../../../utils/gsap/ScrollSmoother.min';
 
 import Slider from "../Slider/Slider";
-import ParalaxedHero from "../ParalaxedHero/ParalaxedHero";
+import ParalaxedHero from "./ParalaxedHero/ParalaxedHero";
+import InfoSection from "./InfoSection/infoSection";
+
 // Регистрация плагинов
 gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
 
@@ -55,16 +56,7 @@ const HomePage = () => {
             <div id="content">
                 <ParalaxedHero/>
                 <Slider/>
-
-                <div className={`${styles.third_container} section`}> {/* Добавляем класс 'section' */}
-                    <div className={styles.third_container__content}>
-                        <h2 className={styles.third_container__header}>To be continued</h2>
-                        <p className={styles.third_container__paragraph}>
-                            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Omnis error provident dignissimos facere. Repellendus tempore autem qui! Quia magnam tempora esse id necessitatibus corrupti mollitia expedita sapiente cum rerum, ut dicta laboriosam!
-                        </p>
-                    </div>
-                    <div className={styles.copy}>© WebDesign Master</div>
-                </div>
+                <InfoSection/>
             </div>
         </div>
     );
