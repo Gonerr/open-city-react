@@ -36,14 +36,14 @@
     font-weight: 100;
     font-family: raleway;
     font-size: calc(var(--index) *0.7);
-    width: 50%;
+    width: 55%;
     letter-spacing: calc(var(--index)/8);
     margin-bottom: 1em;
     /*margin-top: calc(var(--index)*-9);*/
 
 }
 .pictures {
-    max-width: calc(var(--index) * 52);
+    max-width: calc(var(--index) * 55);
     margin-top: calc(var(--index) / 1.25);
     /*transform: var(--second_container-transform);*/
     transition: var(--transition);
@@ -51,6 +51,7 @@
     display: flex;
     justify-content: space-between;
     flex-direction: row;
+    gap: 10px;
 }
 
 /*.pictureShow{*/
@@ -84,7 +85,8 @@
 
 .content {
     will-change: transform;
-    padding-top: 4em;
+    padding-top: 5em;
+    padding-bottom: 7em;
     display: flex;
     align-items: center;
     justify-content: center;

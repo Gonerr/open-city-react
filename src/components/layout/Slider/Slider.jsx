@@ -7,7 +7,7 @@ import pic2 from "../../../data/img/Грандмакет.jpeg";
 import Image from "../../shared/Image/Image";
 
 const Slider = () => {
-    const [hoveredIndex, setHoveredIndex] = useState(null);
+    const [hoveredIndex, setHoveredIndex] = useState(0);
 
     const images = [pic1, pic3, pic4, pic2];
     // useEffect(() => {
