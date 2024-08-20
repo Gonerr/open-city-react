@@ -2,59 +2,66 @@
     background-color: var(--accent);
     min-height: 100vh;
     /*background-color: #1D1A07;*/
-
+    padding: 2em;
     --second_container-transform: translate3d(0, calc(var(--scrollTop) / -7.5), 0);
     color: var(--text);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
     text-align: center;
     /* Update: */
     top: -1px;
-    padding-top: 230px;
     z-index: 10;
     font-family: raleway;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: relative;
 }
 
 
 .header {
     text-transform: uppercase;
-    font-size: calc(var(--index) * 1.8);
-    letter-spacing: calc(var(--index) / 7.5);
-    transform: var(--second_container-transform);
-    transition: var(--transition);
-    will-change: transform;
+    font-size: calc(var(--index) * 2);
+    font-weight: var(--text);
+    letter-spacing: 0;
+    font-family: sc_jurere;
+    margin-bottom: 0.25em;
+    /*transform: var(--second_container-transform);*/
+    /*transition: var(--transition);*/
+    /*will-change: transform;*/
+}
+
+.capture{
+    text-transform: uppercase;
+    font-weight: 100;
+    font-family: raleway;
+    font-size: calc(var(--index) *0.7);
+    width: 50%;
+    letter-spacing: calc(var(--index)/8);
+    margin-bottom: 1em;
+    /*margin-top: calc(var(--index)*-9);*/
+
 }
 .pictures {
-    max-width: calc(var(--index) * 50);
+    max-width: calc(var(--index) * 52);
     margin-top: calc(var(--index) / 1.25);
-    transform: var(--second_container-transform);
+    /*transform: var(--second_container-transform);*/
     transition: var(--transition);
     will-change: transform;
     display: flex;
     justify-content: space-between;
     flex-direction: row;
 }
-.picture{
-    width: 24%;
-    height: 70vh;
-    object-fit: cover;
 
-    /* Скроем элемент в начальном состоянии */
-    opacity: 0;
-    transform: translateY(120px);
-}
+/*.pictureShow{*/
+/*    width: 24%;*/
+/*    height: 70vh;*/
+/*    object-fit: cover;*/
 
-.pictureShow{
-    width: 24%;
-    height: 70vh;
-    object-fit: cover;
-
-    opacity: 1;
-    transition: all 3.5s;
-    transform: translateY(0%);
-}
+/*    opacity: 1;*/
+/*    transition: all 3.5s;*/
+/*    transform: translateY(0%);*/
+/*}*/
 
 .container::after {
     content: '';
@@ -77,4 +84,9 @@
 
 .content {
     will-change: transform;
+    padding-top: 4em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
 }

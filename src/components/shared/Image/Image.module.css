@@ -1,0 +1,47 @@
+.imageContainer {
+    flex: 1; /* Все картинки по умолчанию занимают одинаковое пространство */
+    transition: flex 0.3s ease-in-out, transform 0.3s ease-in-out, margin 0.3s ease-in-out;
+}
+
+.picture{
+    width: 95%;
+    height: 85vh;
+    object-fit: cover;
+    transition: transform 0.3s ease-in-out;
+
+    /* Скроем элемент в начальном состоянии */
+    /*opacity: 0;*/
+    /*transform: translateY(120px);*/
+}
+
+.pictureShow{
+    width: 24%;
+    height: 70vh;
+    object-fit: cover;
+
+    opacity: 1;
+    transition: all 3.5s;
+    transform: translateY(0%);
+}
+
+.hovered {
+    transform: scaleX(1.1); /* увеличение изображения при наведении */
+}
+
+.shrink {
+    flex: 0.9;
+    margin-right: -10px;
+    margin-left: -10px;
+}
+
+.shrinkLeft {
+    transform: translateX(-30px); /* Отталкиваем соседнюю картинку слева */
+    flex: 0.9;
+    margin-right: -10px;
+}
+
+.shrinkRight {
+    transform: translateX(30px); /* Отталкиваем соседнюю картинку справа */
+    flex: 0.9;
+    margin-left: -10px;
+}

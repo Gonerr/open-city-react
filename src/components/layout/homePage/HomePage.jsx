@@ -33,7 +33,7 @@ const HomePage = () => {
             ScrollTrigger.create({
                 trigger: section,
                 start: 'top top',
-                end: 'bottom bottom',
+                end: 'top top',
                 scrub: true,
                 snap: {
                     snapTo: 1 / (sections.length - 1), // Привязываемся к каждой секции
