@@ -1,70 +1,196 @@
-# Getting Started with Create React App
+# Открой город — React
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+**OpenCity React** — экспериментальная React-версия сайта-гида по Санкт-Петербургу.
 
-## Available Scripts
+Проект развивает визуальную концепцию статического сайта [«Открой город»](https://github.com/Gonerr/OpenCity): интерфейс перенесён на компонентную архитектуру, а главная страница дополнена параллаксом, плавной прокруткой и интерактивной галереей.
 
-In the project directory, you can run:
+> Текущая версия является UI-прототипом. Главная страница реализована, а маршруты, галерея, поиск и информационные разделы пока обозначены в навигации, но не подключены как отдельные React-страницы.
 
-### `npm start`
+---
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Назначение проекта
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Будущий сервис должен помогать жителям и туристам:
 
-### `npm test`
+- находить интересные места Санкт-Петербурга;
+- знакомиться с городскими достопримечательностями;
+- выбирать тематические маршруты;
+- планировать короткие прогулки;
+- открывать менее известные локации.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+В этой версии основной акцент сделан на визуальной подаче и анимации интерфейса.
 
-### `npm run build`
+---
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Реализованные возможности
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- React-интерфейс главной страницы;
+- полноэкранный параллакс-экран;
+- многослойная композиция фоновых изображений;
+- плавная прокрутка;
+- привязка анимаций к положению страницы;
+- переходы между секциями;
+- интерактивная галерея из четырёх городских локаций;
+- изменение положения изображений при наведении;
+- компактная панель навигации;
+- переиспользуемые компоненты;
+- стилизация через CSS Modules;
+- базовая маршрутизация React Router.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+---
 
-### `npm run eject`
+## Технологический стек
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- **React 18**
+- JavaScript
+- **React Router 6**
+- **GSAP 3**
+- ScrollTrigger
+- ScrollSmoother
+- CSS Modules
+- Create React App
+- classnames
+- Web Vitals
+- React Testing Library
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+---
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Архитектура интерфейса
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Приложение разделено на компоненты по их назначению:
 
-## Learn More
+1. **Layout** — крупные блоки страницы, навигация, шапка и подвал.
+2. **Shared** — переиспользуемые элементы, например интерактивное изображение.
+3. **UI** — базовые элементы управления.
+4. **Utils** — подключение анимационных библиотек.
+5. **Data** — изображения, шрифты и другие локальные ресурсы.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Главная страница состоит из трёх секций:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- `ParalaxedHero` — первый экран с многослойным параллаксом;
+- `Slider` — интерактивная подборка городских мест;
+- `InfoSection` — завершающий информационный блок.
 
-### Code Splitting
+Анимации создаются при монтировании страницы и удаляются при размонтировании, чтобы не оставлять активные обработчики и ScrollTrigger-экземпляры.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+---
 
-### Analyzing the Bundle Size
+## Работа анимаций
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+При прокрутке приложение:
 
-### Making a Progressive Web App
+- сохраняет текущее смещение страницы в CSS-переменной;
+- сглаживает движение содержимого через ScrollSmoother;
+- создаёт ScrollTrigger для каждой секции;
+- привязывает положение прокрутки к границам секций;
+- очищает обработчики и анимации при закрытии компонента.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Интерактивная галерея хранит индекс активного изображения в React-состоянии и меняет расположение соседних изображений при наведении.
 
-### Advanced Configuration
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## Структура проекта
 
-### Deployment
+```text
+openCity_react/
+├── public/
+│   ├── index.html
+│   └── manifest.json
+├── src/
+│   ├── components/
+│   │   ├── layout/
+│   │   │   ├── homePage/
+│   │   │   │   ├── ParalaxedHero/
+│   │   │   │   └── InfoSection/
+│   │   │   ├── Slider/
+│   │   │   ├── navbar/
+│   │   │   ├── navbarCompact/
+│   │   │   ├── header/
+│   │   │   └── footer/
+│   │   ├── shared/
+│   │   │   └── Image/
+│   │   └── UI/
+│   ├── data/                   # Изображения и шрифты
+│   ├── utils/gsap/             # Анимационные модули
+│   ├── App.js                  # Корневой компонент
+│   └── index.js                # Точка входа
+└── package.json
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+---
 
-### `npm run build` fails to minify
+## Локальный запуск
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### Требования
+
+- Node.js 18 или новее;
+- npm.
+
+### Установка
+
+```bash
+git clone https://github.com/Gonerr/openCity_react.git
+cd openCity_react
+npm install
+npm start
+```
+
+После запуска приложение будет доступно по адресу:
+
+```text
+http://localhost:3000
+```
+
+### Production-сборка
+
+```bash
+npm run build
+```
+
+---
+
+## Реализованные технические решения
+
+- перенос статического макета на React;
+- декомпозиция интерфейса на компоненты;
+- изоляция стилей через CSS Modules;
+- управление интерактивным состоянием через React Hooks;
+- интеграция GSAP с жизненным циклом React;
+- очистка событий и анимаций в `useEffect`;
+- параллакс на основе слоёв;
+- интерактивное позиционирование изображений;
+- подготовка структуры маршрутизации;
+- организация локальных медиа-ресурсов.
+
+---
+
+## Текущее состояние и развитие
+
+Сейчас проект демонстрирует визуальную концепцию главной страницы. Часть навигации ведёт на маршруты, для которых ещё не созданы компоненты и `Route`.
+
+Возможные направления развития:
+
+- реализовать страницы маршрутов, галереи, проекта и контактов;
+- убрать демонстрационный текст из финальной секции;
+- добавить данные о местах в JSON;
+- подключить карточки к подробным страницам;
+- добавить поиск и фильтрацию;
+- подключить интерактивную карту;
+- отключить отладочные маркеры GSAP;
+- улучшить мобильную адаптацию;
+- добавить тесты для компонентов и маршрутов;
+- настроить публикацию production-сборки.
+
+---
+
+## Связанный проект
+
+- [OpenCity](https://github.com/Gonerr/OpenCity) — первая статическая многостраничная версия сайта с опубликованным GitHub Pages-прототипом.
+
+---
+
+## Автор
+
+**Анастасия Лихачева**
+
+React-версия разработана для практики компонентного подхода, анимаций и развития интерфейса командного проекта «Открой город».
